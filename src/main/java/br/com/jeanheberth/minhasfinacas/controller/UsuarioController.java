@@ -22,8 +22,8 @@ public class UsuarioController {
     @GetMapping
     public List<Usuario>listar(String nomeUsuario) {
 
-        List<Usuario> usuarasios = usuarioRepository.findAll();
-        return usuarasios;
+        List<Usuario> usuarios = usuarioRepository.findAll();
+        return usuarios;
     }
 }
 
