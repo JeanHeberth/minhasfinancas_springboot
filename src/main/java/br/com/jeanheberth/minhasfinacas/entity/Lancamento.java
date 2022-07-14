@@ -1,8 +1,8 @@
-package br.com.jeanheberth.minhasfinacas.model.entity;
+package br.com.jeanheberth.minhasfinacas.entity;
 
 
-import br.com.jeanheberth.minhasfinacas.model.enums.StatusLancamento;
-import br.com.jeanheberth.minhasfinacas.model.enums.TipoLancamento;
+import br.com.jeanheberth.minhasfinacas.enums.StatusLancamento;
+import br.com.jeanheberth.minhasfinacas.enums.TipoLancamento;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

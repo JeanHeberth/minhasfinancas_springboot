@@ -1,6 +1,6 @@
 package br.com.jeanheberth.minhasfinacas.service;
 
-import br.com.jeanheberth.minhasfinacas.model.entity.Usuario;
+import br.com.jeanheberth.minhasfinacas.entity.Usuario;
 
 public interface UsuarioService {
 

@@ -1,7 +1,6 @@
 package br.com.jeanheberth.minhasfinacas.controller;
 
-
-import br.com.jeanheberth.minhasfinacas.model.entity.Usuario;
+import br.com.jeanheberth.minhasfinacas.entity.Usuario;
 import br.com.jeanheberth.minhasfinacas.model.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

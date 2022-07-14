@@ -1,4 +1,4 @@
-package br.com.jeanheberth.minhasfinacas.model.entity;
+package br.com.jeanheberth.minhasfinacas.entity;
 
 
 import lombok.AllArgsConstructor;

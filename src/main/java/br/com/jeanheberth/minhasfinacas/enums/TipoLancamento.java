@@ -1,4 +1,4 @@
-package br.com.jeanheberth.minhasfinacas.model.enums;
+package br.com.jeanheberth.minhasfinacas.enums;
 
 public enum TipoLancamento {
 
