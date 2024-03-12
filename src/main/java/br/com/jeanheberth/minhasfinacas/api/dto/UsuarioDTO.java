@@ -1,4 +1,4 @@
-package br.com.jeanheberth.minhasfinacas.api.dvo;
+package br.com.jeanheberth.minhasfinacas.api.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @Builder
-public class UsuarioDVO {
+public class UsuarioDTO {
     private String email;
     private String nome;
     private String senha;

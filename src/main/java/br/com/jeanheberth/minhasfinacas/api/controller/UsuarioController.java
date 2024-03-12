@@ -1,6 +1,6 @@
 package br.com.jeanheberth.minhasfinacas.api.controller;
 
-import br.com.jeanheberth.minhasfinacas.api.dvo.UsuarioDVO;
+import br.com.jeanheberth.minhasfinacas.api.dto.UsuarioDTO;
 import br.com.jeanheberth.minhasfinacas.entity.Usuario;
 import br.com.jeanheberth.minhasfinacas.exception.ErroAutenticacao;
 import br.com.jeanheberth.minhasfinacas.exception.RegraNegocioException;
@@ -23,29 +23,28 @@ public class UsuarioController {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+   @PostMapping("/autenticar")
+   public ResponseEntity autenticar(UsuarioDTO usuarioDTO){
+       try {
+           Usuario usuarioAutenticado = usuarioService.autenticar(usuarioDTO.getEmail(), usuarioDTO.getSenha());
+           return ResponseEntity.ok(usuarioAutenticado);
+       }catch (ErroAutenticacao e){
+           return ResponseEntity.badRequest().body(e.getMessage());
+       }
+   }
 
     @PostMapping
-    public ResponseEntity salvar(@RequestBody UsuarioDVO dvo) {
+    public ResponseEntity salvar(@RequestBody UsuarioDTO usuarioDTO) {
         Usuario usuario = Usuario.builder()
-                .nome(dvo.getNome())
-                .email(dvo.getEmail())
-                .senha(dvo.getSenha())
-                .dataCadastro(dvo.getData_cadastro())
+                .nome(usuarioDTO.getNome())
+                .email(usuarioDTO.getEmail())
+                .senha(usuarioDTO.getSenha())
+                .dataCadastro(usuarioDTO.getData_cadastro())
                 .build();
         try {
             Usuario usuarioSalvo = usuarioService.salvarUsuario(usuario);
             return new ResponseEntity(usuarioSalvo, HttpStatus.CREATED);
         } catch (RegraNegocioException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
-    }
-
-    @PostMapping("/autenticar")
-    public ResponseEntity autenticar(@RequestBody UsuarioDVO dvo) {
-        try {
-            Usuario usuarioAutenticado = usuarioService.autenticar(dvo.getEmail(), dvo.getSenha());
-            return ResponseEntity.ok(usuarioAutenticado);
-        } catch (ErroAutenticacao e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
