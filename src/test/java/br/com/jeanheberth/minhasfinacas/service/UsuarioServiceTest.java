@@ -1,13 +1,12 @@
 package br.com.jeanheberth.minhasfinacas.service;
 
 
-import br.com.jeanheberth.minhasfinacas.entity.Usuario;
-import br.com.jeanheberth.minhasfinacas.exception.ErroAutenticacao;
-import br.com.jeanheberth.minhasfinacas.exception.RegraNegocioException;
-import br.com.jeanheberth.minhasfinacas.model.repository.UsuarioRepository;
-import br.com.jeanheberth.minhasfinacas.service.impl.UsuarioServiceImpl;
+import br.com.jeanheberth.minhasfinacas.api.entity.Usuario;
+import br.com.jeanheberth.minhasfinacas.api.exception.ErroAutenticacao;
+import br.com.jeanheberth.minhasfinacas.api.exception.RegraNegocioException;
+import br.com.jeanheberth.minhasfinacas.api.repository.UsuarioRepository;
+import br.com.jeanheberth.minhasfinacas.api.service.UsuarioService;
 import org.assertj.core.api.Assertions;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;

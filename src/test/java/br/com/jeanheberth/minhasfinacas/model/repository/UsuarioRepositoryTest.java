@@ -1,15 +1,14 @@
 package br.com.jeanheberth.minhasfinacas.model.repository;
 
-import br.com.jeanheberth.minhasfinacas.entity.Usuario;
+import br.com.jeanheberth.minhasfinacas.api.entity.Usuario;
+import br.com.jeanheberth.minhasfinacas.api.repository.UsuarioRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureDataJpa;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 

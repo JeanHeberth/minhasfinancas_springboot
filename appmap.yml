@@ -1,0 +1,4 @@
+name: "minhasfinancas_springboot"
+appmap_dir: "tmp/appmap"
+packages:
+- path: "br.com.jeanheberth.minhasfinacas"

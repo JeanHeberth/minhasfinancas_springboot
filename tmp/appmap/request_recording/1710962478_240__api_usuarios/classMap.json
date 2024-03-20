@@ -1,0 +1,16 @@
+[
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "POST /api/usuarios"
+      },
+      {
+        "type": "route",
+        "name": "POST /error"
+      }
+    ]
+  }
+]

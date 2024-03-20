@@ -1,0 +1,12 @@
+[
+  {
+    "route": "POST /api/usuarios",
+    "parameters": "()",
+    "status": null
+  },
+  {
+    "route": "POST /error",
+    "parameters": "()",
+    "status": 500
+  }
+]

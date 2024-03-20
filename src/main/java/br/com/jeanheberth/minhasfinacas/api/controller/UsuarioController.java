@@ -1,11 +1,11 @@
 package br.com.jeanheberth.minhasfinacas.api.controller;
 
 import br.com.jeanheberth.minhasfinacas.api.dto.UsuarioDTO;
-import br.com.jeanheberth.minhasfinacas.entity.Usuario;
-import br.com.jeanheberth.minhasfinacas.exception.ErroAutenticacao;
-import br.com.jeanheberth.minhasfinacas.exception.RegraNegocioException;
-import br.com.jeanheberth.minhasfinacas.model.repository.UsuarioRepository;
-import br.com.jeanheberth.minhasfinacas.service.UsuarioService;
+import br.com.jeanheberth.minhasfinacas.api.entity.Usuario;
+import br.com.jeanheberth.minhasfinacas.api.exception.ErroAutenticacao;
+import br.com.jeanheberth.minhasfinacas.api.exception.RegraNegocioException;
+import br.com.jeanheberth.minhasfinacas.api.repository.UsuarioRepository;
+import br.com.jeanheberth.minhasfinacas.api.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
