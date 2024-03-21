@@ -24,7 +24,7 @@ public class UsuarioController {
     private UsuarioRepository usuarioRepository;
 
    @PostMapping("/autenticar")
-   public ResponseEntity autenticar(UsuarioDTO usuarioDTO){
+   public ResponseEntity autenticar(@RequestBody UsuarioDTO usuarioDTO){
        try {
            Usuario usuarioAutenticado = usuarioService.autenticar(usuarioDTO.getEmail(), usuarioDTO.getSenha());
            return ResponseEntity.ok(usuarioAutenticado);
