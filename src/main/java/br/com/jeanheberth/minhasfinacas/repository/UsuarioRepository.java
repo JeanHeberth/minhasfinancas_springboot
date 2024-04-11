@@ -1,6 +1,6 @@
-package br.com.jeanheberth.minhasfinacas.api.repository;
+package br.com.jeanheberth.minhasfinacas.repository;
 
-import br.com.jeanheberth.minhasfinacas.api.entity.Usuario;
+import br.com.jeanheberth.minhasfinacas.entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

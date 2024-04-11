@@ -15,7 +15,6 @@ public class UsuarioDTO {
     private String email;
     private String nome;
     private String senha;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
-    private LocalDate dataCadastro;
+
 
 }

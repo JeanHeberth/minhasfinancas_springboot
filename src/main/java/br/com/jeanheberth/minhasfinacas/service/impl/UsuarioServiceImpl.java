@@ -1,10 +1,10 @@
-package br.com.jeanheberth.minhasfinacas.api.service.impl;
+package br.com.jeanheberth.minhasfinacas.service.impl;
 
-import br.com.jeanheberth.minhasfinacas.api.exception.ErroAutenticacao;
-import br.com.jeanheberth.minhasfinacas.api.exception.RegraNegocioException;
-import br.com.jeanheberth.minhasfinacas.api.service.UsuarioService;
-import br.com.jeanheberth.minhasfinacas.api.entity.Usuario;
-import br.com.jeanheberth.minhasfinacas.api.repository.UsuarioRepository;
+import br.com.jeanheberth.minhasfinacas.exception.ErroAutenticacao;
+import br.com.jeanheberth.minhasfinacas.exception.RegraNegocioException;
+import br.com.jeanheberth.minhasfinacas.service.UsuarioService;
+import br.com.jeanheberth.minhasfinacas.entity.Usuario;
+import br.com.jeanheberth.minhasfinacas.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -48,5 +48,10 @@ public class UsuarioServiceImpl implements UsuarioService {
         if (existe) {
             throw new RegraNegocioException("Já existe um usuário cadastrado com esse email");
         }
+    }
+
+    @Override
+    public Optional<Usuario> obterPorId(Long id) {
+        return Optional.empty();
     }
 }

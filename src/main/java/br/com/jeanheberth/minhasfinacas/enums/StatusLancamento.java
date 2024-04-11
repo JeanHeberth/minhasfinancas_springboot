@@ -1,4 +1,4 @@
-package br.com.jeanheberth.minhasfinacas.api.enums;
+package br.com.jeanheberth.minhasfinacas.enums;
 
 public enum StatusLancamento {
 
