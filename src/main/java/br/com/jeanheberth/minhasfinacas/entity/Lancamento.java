@@ -39,10 +39,10 @@ public class Lancamento {
     private LocalDate dataCadastro;
 
     @Enumerated(EnumType.STRING)
-    private TipoLancamento tipoLancamento;
+    private TipoLancamento tipo;
 
     @Enumerated(EnumType.STRING)
-    private StatusLancamento statusLancamento;
+    private StatusLancamento status;
 
 
 }

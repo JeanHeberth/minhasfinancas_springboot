@@ -45,7 +45,6 @@ public class UsuarioController {
                 .nome(usuarioDTO.getNome())
                 .email(usuarioDTO.getEmail())
                 .senha(usuarioDTO.getSenha())
-//                .dataCadastro(usuarioDTO.getDataCadastro())
                 .build();
         try {
             Usuario usuarioSalvo = usuarioService.salvarUsuario(usuario);
@@ -65,10 +64,6 @@ public class UsuarioController {
         BigDecimal saldo = lancamentoService.obterSaldoPorUsuario(id);
         return ResponseEntity.ok(saldo);
 
-    }
-    public List<Usuario> listar(String nomeUsuario) {
-        List<Usuario> usuarios = usuarioRepository.findAll();
-        return usuarios;
     }
 }
 

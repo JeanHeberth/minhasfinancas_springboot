@@ -27,7 +27,7 @@ public class LancamentoServiceImpl implements LancamentoService {
 
     @Override
     public Lancamento salvar(Lancamento lancamento) {
-        lancamento.setStatusLancamento(StatusLancamento.PENDENTE);
+        lancamento.setStatus(StatusLancamento.PENDENTE);
         return lancamentoRepository.save(lancamento);
     }
 
@@ -41,7 +41,6 @@ public class LancamentoServiceImpl implements LancamentoService {
     public void deletar(Lancamento lancamento) {
         Objects.requireNonNull(lancamento.getId());
         lancamentoRepository.delete(lancamento);
-
     }
 
     @Override
@@ -55,18 +54,28 @@ public class LancamentoServiceImpl implements LancamentoService {
 
     @Override
     public void atulizarStatus(Lancamento lancamento, StatusLancamento statusLancamento) {
-        lancamento.setStatusLancamento(statusLancamento);
+        lancamento.setStatus(statusLancamento);
         atualizar(lancamento);
     }
 
     @Override
     public BigDecimal obterSaldoPorUsuario(Long id) {
-        return null;
+        BigDecimal receitas = lancamentoRepository.obterSaldoPorTipoLancamentoEUsuarioEStatus(id, TipoLancamento.RECEITA, StatusLancamento.EFETIVADO);
+        BigDecimal despesas = lancamentoRepository.obterSaldoPorTipoLancamentoEUsuarioEStatus(id, TipoLancamento.DESPESA, StatusLancamento.EFETIVADO);
+
+        if (receitas == null) {
+            receitas = BigDecimal.ZERO;
+        }
+
+        if (despesas == null) {
+            despesas = BigDecimal.ZERO;
+        }
+
+        return receitas.subtract(despesas);
     }
 
     @Override
     public void validar(Lancamento lancamento) {
-
         if (lancamento.getDescricao() == null || lancamento.getDescricao().trim().equals("")) {
             throw new RegraNegocioException("Informe uma Descrição válida.");
         }
@@ -87,32 +96,14 @@ public class LancamentoServiceImpl implements LancamentoService {
             throw new RegraNegocioException("Informe um Valor válido.");
         }
 
-        if (lancamento.getTipoLancamento() == null) {
+        if (lancamento.getTipo() == null) {
             throw new RegraNegocioException("Informe um tipo de Lançamento.");
         }
+
     }
+
     @Override
     public Optional<Lancamento> obterPorId(Long id) {
         return lancamentoRepository.findById(id);
     }
-
-//    @Override
-//    @Transactional(readOnly = true)
-//    public BigDecimal obterSaldoPorUsuario(Long id) {
-//
-//        BigDecimal receitas = lancamentoRepository.obterSaldoPorTipoLancamentoEUsuarioEStatus(id, TipoLancamento.RECEITA, StatusLancamento.EFETIVADO);
-//        BigDecimal despesas = lancamentoRepository.obterSaldoPorTipoLancamentoEUsuarioEStatus(id, TipoLancamento.DESPESA, StatusLancamento.EFETIVADO);
-//
-//        if(receitas == null) {
-//            receitas = BigDecimal.ZERO;
-//        }
-//
-//        if(despesas == null) {
-//            despesas = BigDecimal.ZERO;
-//        }
-//
-//        return receitas.subtract(despesas);
-//    }
-
-
 }
