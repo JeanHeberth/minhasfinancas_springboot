@@ -1,4 +1,4 @@
-package br.com.jeanheberth.minhasfinacas.api.exception;
+package br.com.jeanheberth.minhasfinacas.exception;
 
 public class RegraNegocioException extends RuntimeException {
     public RegraNegocioException(String msg) {

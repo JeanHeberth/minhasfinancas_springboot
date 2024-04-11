@@ -1,7 +1,8 @@
-package br.com.jeanheberth.minhasfinacas.api.entity;
+package br.com.jeanheberth.minhasfinacas.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -33,6 +34,7 @@ public class Usuario {
 
 
     @Column(name = "senha")
+    @JsonIgnore
     private String senha;
 
     @Column(name = "dataCadastro")

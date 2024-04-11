@@ -1,7 +1,7 @@
 package br.com.jeanheberth.minhasfinacas.model.repository;
 
-import br.com.jeanheberth.minhasfinacas.api.entity.Usuario;
-import br.com.jeanheberth.minhasfinacas.api.repository.UsuarioRepository;
+import br.com.jeanheberth.minhasfinacas.entity.Usuario;
+import br.com.jeanheberth.minhasfinacas.repository.UsuarioRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
