@@ -39,7 +39,7 @@ public class UsuarioController {
                 .nome(usuarioDTO.getNome())
                 .email(usuarioDTO.getEmail())
                 .senha(usuarioDTO.getSenha())
-                .dataCadastro(usuarioDTO.getData_cadastro())
+                .dataCadastro(usuarioDTO.getDataCadastro())
                 .build();
         try {
             Usuario usuarioSalvo = usuarioService.salvarUsuario(usuario);
